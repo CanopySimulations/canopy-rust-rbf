@@ -32,5 +32,5 @@ steps:
 - script: wasm-pack build --target=web
   displayName: 'Build'
 
-- script: wasm-pack publish
+- script: npm publish
   displayName: 'Publish'
