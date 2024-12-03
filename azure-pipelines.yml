@@ -14,13 +14,11 @@ steps:
     version: '^22'
   displayName: 'Install Node.js'
 
-- script: |
-  npm install -g vsts-npm-auth --registry https://registry.npmjs.com --always-auth false
-displayName: "Install auth"
+- script: npm install -g vsts-npm-auth --registry https://registry.npmjs.com --always-auth false
+  displayName: 'Install auth'
 
-- script: |
-  vsts-npm-auth -config .npmrc
-displayName: "Auth with private npm server"
+- script: vsts-npm-auth -config .npmrc
+  displayName: 'Auth with private npm server'
 
 - script: |
     set -e
