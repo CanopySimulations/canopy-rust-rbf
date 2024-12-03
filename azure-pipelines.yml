@@ -14,11 +14,10 @@ steps:
     version: '^22'
   displayName: 'Install Node.js'
 
-- script: npm install -g vsts-npm-auth --registry https://registry.npmjs.com --always-auth false
-  displayName: 'Install auth'
-
-- script: vsts-npm-auth -config .npmrc
-  displayName: 'Auth with private npm server'
+- task: npmAuthenticate@0
+  displayName: 'Authenticate to Azure Artifacts feed'
+  inputs:
+    workingFile: .npmrc
 
 - script: |
     set -e
